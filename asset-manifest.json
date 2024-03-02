@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/BitBucket/static/css/main.7acaea2f.css",
+    "main.js": "/BitBucket/static/js/main.07d3183d.js",
+    "index.html": "/BitBucket/index.html",
+    "main.7acaea2f.css.map": "/BitBucket/static/css/main.7acaea2f.css.map",
+    "main.07d3183d.js.map": "/BitBucket/static/js/main.07d3183d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7acaea2f.css",
+    "static/js/main.07d3183d.js"
+  ]
+}
