@@ -1,12 +1,9 @@
-import { FarmWrapper, TitleWrapper } from './ListFarm.styled';
-
-const ProductItem = ({ name, price, picture }) => {
+const ProductItem = ({ id, name, price, picture }) => {
   return (
-    <FarmWrapper>
-      <TitleWrapper>
-        <p>{title}</p>
-      </TitleWrapper>
-    </FarmWrapper>
+    <div class="card-product" key={id}>
+      <div class="title-card-product">{name}</div>
+      <img src="" alt="" width="40" height="40" />
+    </div>
   );
 };
 

@@ -17,3 +17,23 @@ code {
 ul {
   list-style-type: none;
 }
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-product {
+  display: flex;
+  flex-direction: column;
+  width: 200px;
+  height: 200px;
+  border: 1px solid rgb(4, 129, 81);
+  margin: 20px 20px;
+}
+.title-card-product {
+  background-color: darkolivegreen;
+  padding-left: 5px;
+  padding-top: 5px;
+  color: antiquewhite;
+}

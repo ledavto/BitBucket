@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { ListProductStyle } from './ListProduct.styled';
+import ProductItem from './ProductItem';
 
 const products = [
   {
@@ -23,18 +23,16 @@ const products = [
 ];
 
 const ListProduct = () => {
-  const [productId] = useState(2);
+  // const [productId] = useState(2);
   return (
-    <ListProductStyle>
-      <ul>
-        {products.map(({ name, id, price, picture }) => (
-          <li key={id}>
-            <productItem name={title} isActive={id + 1 === farmId} />
-          </li>
-        ))}
-      </ul>
-    </ListProductStyle>
+    <ul>
+      {products.map(({ name, id, price, picture }) => (
+        <li key={id}>
+          <ProductItem name={name} id={id} />
+        </li>
+      ))}
+    </ul>
   );
 };
 
-export default ListFarm;
+export default ListProduct;

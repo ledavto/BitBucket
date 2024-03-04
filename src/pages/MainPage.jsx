@@ -1,4 +1,4 @@
-import Container from 'components/Container/container';
+import Container from 'components/Container/Container';
 import { Main } from 'components/Main/Main.styled';
 import MainInner from 'components/Main/Main';
 import React from 'react';
