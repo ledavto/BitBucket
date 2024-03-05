@@ -11,7 +11,7 @@ const products = [
   {
     id: 2,
     name: 'Валідол',
-    picture: '',
+    picture: '/images/validol.jpg',
     price: 15,
   },
   {
@@ -20,15 +20,39 @@ const products = [
     picture: '',
     price: 48,
   },
+  {
+    id: 4,
+    name: 'Піносол ',
+    picture: '',
+    price: 102,
+  },
+  {
+    id: 5,
+    name: 'Аквамарис',
+    picture: '',
+    price: 130,
+  },
+  {
+    id: 6,
+    name: 'Ношпа',
+    picture: '',
+    price: 102,
+  },
+  {
+    id: 7,
+    name: 'Назонекс',
+    picture: '',
+    price: 130,
+  },
 ];
 
 const ListProduct = () => {
   // const [productId] = useState(2);
   return (
-    <ul>
+    <ul class="card-set">
       {products.map(({ name, id, price, picture }) => (
         <li key={id}>
-          <ProductItem name={name} id={id} />
+          <ProductItem name={name} id={id} picture={picture} />
         </li>
       ))}
     </ul>

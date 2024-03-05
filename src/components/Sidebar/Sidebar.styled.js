@@ -4,11 +4,12 @@ const StyledSidebar = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  height: 100vh;
+  /* height: 100vh; */
   max-width: 197px;
-  outline: 1px solid red;
+  outline: 1px solid green;
   padding-top: 14px;
   padding-bottom: 14px;
+  background-color: green;
 
   @media screen and (min-width: 768px) {
     max-width: 212px;

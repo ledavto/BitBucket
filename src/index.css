@@ -23,17 +23,32 @@ ul {
   flex-direction: row;
 }
 
+.card-set {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+}
 .card-product {
   display: flex;
   flex-direction: column;
-  width: 200px;
+  width: 300px;
   height: 200px;
   border: 1px solid rgb(4, 129, 81);
   margin: 20px 20px;
+  padding: 10px 10px;
+  align-items: center;
+  gap: 10px;
 }
 .title-card-product {
   background-color: darkolivegreen;
-  padding-left: 5px;
+  /* padding-left: 5px;
   padding-top: 5px;
+  padding-bottom: 5px; */
   color: antiquewhite;
+  width: 100%;
+}
+
+.button-add-product {
+  width: 80%;
+  height: 40px;
 }
