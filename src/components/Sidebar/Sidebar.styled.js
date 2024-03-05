@@ -3,7 +3,7 @@ import styled from 'styled-components';
 const StyledSidebar = styled.section`
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   /* height: 100vh; */
   max-width: 197px;
   outline: 1px solid green;

@@ -3,8 +3,8 @@ import { SidebarContainer } from '../Sidebar.styled';
 
 export const ListFarmStyle = styled.div`
   /* max-height: 282px; */
-  margin-top: 40px;
-  overflow-y: auto;
+  /* margin-top: 40px; */
+  /* overflow-y: auto; */
 
   @media screen and (min-width: 768px) {
     /* max-height: 460px; */
@@ -20,7 +20,7 @@ export const FarmWrapper = styled(SidebarContainer)`
   align-items: center;
   justify-content: space-between;
   position: relative;
-  background-color: ${p => (p.$isActive ? `#F6F6F7` : `transparent`)};
+  background-color: ${p => (p.$isActive ? `#F6F6F7` : `#blue`)};
   padding-top: 20px;
   padding-bottom: 20px;
   overflow: hidden;

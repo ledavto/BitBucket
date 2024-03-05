@@ -5,7 +5,7 @@ const FarmItem = ({ isActive, title, icon }) => {
   return (
     <FarmWrapper $isActive={isActive}>
       <TitleWrapper $isActive={isActive}>
-        <p>{title}</p>
+        <div>{title}</div>
       </TitleWrapper>
     </FarmWrapper>
   );
