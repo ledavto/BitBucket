@@ -1,8 +1,8 @@
-import Container from 'components/Container/Container';
+import Container from 'components/Container';
 import { Main } from 'components/Main/Main.styled';
-import MainInner from 'components/Main/Main';
+import MainInner from 'components/Main';
 import React from 'react';
-import Sidebar from 'components/Sidebar/Sidebar';
+import Sidebar from 'components/Sidebar';
 
 const MainPage = () => {
   return (

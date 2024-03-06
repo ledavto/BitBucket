@@ -1,4 +1,4 @@
-import ListFarm from './ListFarm/ListFarm';
+import ListFarm from './ListFarm';
 
 import { StyledSidebar, SidebarContainer } from './Sidebar.styled.js';
 

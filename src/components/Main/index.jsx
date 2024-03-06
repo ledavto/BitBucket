@@ -1,4 +1,4 @@
-import ListProduct from 'components/ProductCard/ProductCard';
+import ListProduct from 'components/ProductCard';
 import { MainContent } from './Main.styled';
 
 // import { Link } from 'react-router-dom';
