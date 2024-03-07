@@ -10,7 +10,7 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<MainPage />} />
 
-        <Route
+        {/* <Route
           path="/cart"
           element={
             <RestrictedRoute
@@ -19,7 +19,7 @@ export const App = () => {
             />
           }
         />
-        <Route path="*" element={<h1>NOT FOUND PAGE</h1>} />
+        <Route path="*" element={<h1>NOT FOUND PAGE</h1>} /> */}
       </Routes>
     </div>
   );

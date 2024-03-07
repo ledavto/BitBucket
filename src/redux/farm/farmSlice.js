@@ -12,7 +12,7 @@ const handleRejected = (state, action) => {
 };
 
 const farmSlice = createSlice({
-  name: 'farmReducer',
+  name: 'farm',
   initialState,
 
   extraReducers: builder => {
@@ -28,4 +28,4 @@ const farmSlice = createSlice({
   },
 });
 
-export const farmReducer = farmSlice.reducer;
+export const presistReducerFarm = farmSlice.reducer;

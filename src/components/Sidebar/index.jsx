@@ -1,8 +1,8 @@
-import ListFarm from './ListFarm';
+import { ListFarm } from './ListFarm';
 
 import { StyledSidebar, SidebarContainer } from './Sidebar.styled.js';
 
-const Sidebar = () => {
+export const Sidebar = () => {
   return (
     <StyledSidebar>
       <SidebarContainer>
@@ -11,5 +11,3 @@ const Sidebar = () => {
     </StyledSidebar>
   );
 };
-
-export default Sidebar;

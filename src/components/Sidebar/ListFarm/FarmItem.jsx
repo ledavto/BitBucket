@@ -1,14 +1,17 @@
 // import iconsSprite from '../../../assets/svgSprite/iconsSprite.svg';
+import { Link } from 'react-router-dom';
 import { FarmWrapper, TitleWrapper } from './ListFarm.styled';
 
-const FarmItem = ({ isActive, title, icon }) => {
+export const FarmItem = ({ isActive, title, id }) => {
   return (
     <FarmWrapper $isActive={isActive}>
       <TitleWrapper $isActive={isActive}>
-        <div>{title}</div>
+        <div>
+          <Link className="nav-item nav-link" to={id}>
+            {title}
+          </Link>
+        </div>
       </TitleWrapper>
     </FarmWrapper>
   );
 };
-
-export default FarmItem;
