@@ -9,7 +9,7 @@ const productSchema = new Schema(
     },
     price: {
       type: String,
-      required: [true, 'Set surname for user'],
+      required: [true, 'Set price'],
     },
 
     ownerFarm: {
@@ -28,11 +28,13 @@ productSchema.post('save', (error, data, next) => {
 const addSchema = Joi.object({
   titleProd: Joi.string().required(),
   price: Joi.string().required(),
+  ownerFarm: Joi.string().required(),
+  picture:Joi.string(),
 });
 
 const schema = { addSchema };
 const Product = model('products', productSchema);
 
-module.exports = Product;
+module.exports = {Product, schema};
 
 //module.exports = model("user", userSchema);

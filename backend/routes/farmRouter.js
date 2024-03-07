@@ -1,9 +1,10 @@
 const express = require('express');
-const { addFarm } = require('../controllers');
+const { addFarm, fetchFarms } = require('../controllers');
 
 const farmRouter = express.Router();
 
-farmRouter.post('/', addFarm);
-// .get('/:id', getFarmById);
+farmRouter
+    .post('/', addFarm)
+    .get('/', fetchFarms);
 
 module.exports = farmRouter;

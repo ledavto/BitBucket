@@ -2,8 +2,7 @@ const express = require('express');
 const morgan = require('morgan');
 const cors = require('cors');
 require('dotenv').config();
-const productRouter = require('./routes/productRouter');
-const farmRouter = require('./routes');
+const {productRouter, farmRouter} = require('./routes');
 
 const app = express();
 
@@ -13,7 +12,7 @@ app.use(express.json());
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
 
-// app.use('/api/farm', farmRouter);
+ app.use('/api/farm', farmRouter);
 app.use('/api/product', productRouter);
 
 app.use((_, res) => {

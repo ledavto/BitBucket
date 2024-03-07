@@ -1,4 +1,4 @@
-const Farm = require('./FarmModel.js');
-const Product = require('./ProductModel.js');
+const { Farm } = require('./FarmModel');
+const { Product } = require('./ProductModel');
 
 module.exports = { Farm, Product };

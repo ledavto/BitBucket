@@ -23,6 +23,6 @@ const addFarmSchema = Joi.object({
 
 const schema = { addFarmSchema };
 
-const Farm = model('post', farmSchema);
+const Farm = model('farm', farmSchema);
 
 module.exports = { Farm, schema };

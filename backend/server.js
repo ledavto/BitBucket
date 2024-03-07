@@ -15,6 +15,5 @@ mongoose
     process.exit(1);
   });
 
-//   DB_HOST =
-//     'mongodb+srv://user-butbucket:8oRaKca2NfcsQpf@cluster0.4dvwoew.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
-//   PORT = 3000;
+// DB_HOST ='mongodb+srv://user-butbucket:LgLLCtgp2oYk69pj@cluster0.4dvwoew.mongodb.net/db-test?retryWrites=true&w=majority'
+// PORT = 3000
