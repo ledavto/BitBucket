@@ -1,5 +1,5 @@
 export const initialState = {
-  farm: []
+  product: []
     // items: [],
     // isLoading: false,
     // isRefreshing: false,

@@ -3,11 +3,12 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 const URL = "https://bitbucket-backend.onrender.com";
 
-export const fetchFarms = createAsyncThunk(
+export const fetchProductbyFarm = createAsyncThunk(
   'farms/fetchAll',
-  async (_, thunkAPI) => {
+  async (id, thunkAPI) => {
     try {
-      const { data } = await axios.get(`${URL}/api/farm`);
+      console.log("ID - ",id)
+      const { data } = await axios.get(`${URL}/api/product/${id}`);
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

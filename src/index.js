@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       <BrowserRouter basename="/BitBucket">
         <App />
       </BrowserRouter>
-      {/* </PersistGate>*/}
+      {/* </PersistGate> */}
     </Provider>
   </React.StrictMode>
 );

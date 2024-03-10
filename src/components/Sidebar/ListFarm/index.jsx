@@ -1,47 +1,19 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { FarmItem } from './FarmItem';
 import { ListFarmStyle } from './ListFarm.styled';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { fetchFarms } from '../../../redux/farm/farm-operations';
 import { useSearchParams } from 'react-router-dom';
 
-// const farms = [
-//   {
-//     id: '1',
-//     title: 'Благодія',
-//   },
-//   {
-//     id: '2',
-//     title: 'Копійка',
-//   },
-//   {
-//     id: '3',
-//     title: 'АНЦ',
-//   },
-// ];
-
-export const ListFarm = () => {
-  // const [searchParams] = useSearchParams();
-  // const name = searchParams.get('name');
-  const dispatch = useDispatch();
-
-  // const [farmId, setFarmId] = useState(2);
-  const farmsList = useState(state => state);
-  console.log(farmsList);
-
-  // Викликаємо операцію
-  useEffect(() => {
-    dispatch(fetchFarms());
-  }, [dispatch]);
-
+export const ListFarm = ({ farms }) => {
   return (
     <ListFarmStyle>
       <ul>
-        {/* {farms.map(({ title, id }) => (
-          <li key={id}>
-            <FarmItem title={title} id={id} isActive={id + 1 === farmId} />
+        {farms.map(({ title, _id }) => (
+          <li key={_id}>
+            <FarmItem title={title} _id={_id} />
           </li>
-        ))} */}
+        ))}
       </ul>
     </ListFarmStyle>
   );
