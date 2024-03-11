@@ -3,11 +3,11 @@ import { initialState } from './initialState';
 import { fetchProductbyFarm } from './product-operations';
 
 const handlePending = state => {
-  // state.farm.isLoading = true;
+  state.products.isLoading = true;
 };
 
 const handleRejected = (state, action) => {
-  // state.farm.isLoading = false;
+  state.products.isLoading = false;
   // state.farm.error = action.payload;
 };
 
@@ -21,6 +21,7 @@ const productSlice = createSlice({
       .addCase(fetchProductbyFarm.pending, handlePending)
       .addCase(fetchProductbyFarm.fulfilled, (state, action) => {
         state.products = [...action.payload];
+        state.products.isLoading = false;
       })
       .addCase(fetchProductbyFarm.rejected, handleRejected);
   },

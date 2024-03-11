@@ -3,12 +3,12 @@ import { initialState } from './initialState';
 import { fetchFarms } from './farm-operations';
 
 const handlePending = state => {
-  // state.farm.isLoading = true;
+  state.farm.isLoading = true;
 };
 
 const handleRejected = (state, action) => {
-  // state.farm.isLoading = false;
-  state.farm.error = action.payload;
+  state.farm.isLoading = false;
+  // state.farm.error = action.payload;
 };
 
 const farmSlice = createSlice({
@@ -20,10 +20,8 @@ const farmSlice = createSlice({
       //Запит списку АПТЕК
       .addCase(fetchFarms.pending, handlePending)
       .addCase(fetchFarms.fulfilled, (state, action) => {
-        // state.farm.isLoading = false;
-        // state.farm.error = null;
-        // console.log(action.payload);
-        state.farm =  [...action.payload];
+        state.farm.isLoading = false;
+        state.farm = [...action.payload];
       })
       .addCase(fetchFarms.rejected, handleRejected);
   },

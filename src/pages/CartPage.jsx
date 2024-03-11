@@ -1,16 +1,16 @@
 import Container from 'components/Container';
 import React from 'react';
-import { Sidebar } from 'components/Sidebar';
 import { NavBar } from 'components/NavBar';
+import { FormOrder } from 'components/FormOrder';
 import ListProduct from 'components/ProductList';
 
-const MainPage = () => {
+const CartPage = () => {
   return (
     <div>
       <Container>
         <NavBar />
         <div className="main-section">
-          <Sidebar />
+          <FormOrder />
           <ListProduct />
         </div>
       </Container>
@@ -18,4 +18,4 @@ const MainPage = () => {
   );
 };
 
-export default MainPage;
+export default CartPage;
