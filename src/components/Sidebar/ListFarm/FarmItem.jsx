@@ -1,5 +1,5 @@
 // import iconsSprite from '../../../assets/svgSprite/iconsSprite.svg';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FarmWrapper, TitleWrapper } from './ListFarm.styled';
 
 export const FarmItem = ({ isActive, title, _id }) => {
@@ -7,9 +7,9 @@ export const FarmItem = ({ isActive, title, _id }) => {
     <FarmWrapper $isActive={isActive}>
       <TitleWrapper $isActive={isActive}>
         <div>
-          <Link className="nav-item nav-link" to={`farm/${_id}`}>
+          <NavLink className="nav-item nav-link" to={`farm/${_id}`}>
             {title}
-          </Link>
+          </NavLink>
         </div>
       </TitleWrapper>
     </FarmWrapper>

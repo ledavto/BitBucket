@@ -8,11 +8,11 @@ const handlePending = state => {
 
 const handleRejected = (state, action) => {
   // state.farm.isLoading = false;
-  state.farm.error = action.payload;
+  // state.farm.error = action.payload;
 };
 
 const productSlice = createSlice({
-  name: 'product',
+  name: 'products',
   initialState,
 
   extraReducers: builder => {
@@ -20,8 +20,7 @@ const productSlice = createSlice({
       //Запит продуктів
       .addCase(fetchProductbyFarm.pending, handlePending)
       .addCase(fetchProductbyFarm.fulfilled, (state, action) => {
-
-        state.product =  [...action.payload];
+        state.products = [...action.payload];
       })
       .addCase(fetchProductbyFarm.rejected, handleRejected);
   },

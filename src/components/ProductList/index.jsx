@@ -52,29 +52,20 @@ import { selectProduct } from '../../redux/product/selectors';
 
 const ListProduct = () => {
   // const [productId] = useState(2);
-  const params = useParams();
-  const dispatch = useDispatch();
-  const products = useSelector(selectProduct);
-
-  console.log(products);
-
-  useEffect(() => {
-    console.log(params.farmId);
-    dispatch(fetchProductbyFarm(params.farmId));
-  }, [dispatch, params.farmId]);
 
   return (
     <ul className="card-set">
-      {/* {products.map(({ titleProd, id, price, picture = '' }) => (
-        <li key={id}>
-          <ProductItem
-            name={titleProd}
-            price={price}
-            id={id}
-            picture={picture}
-          />
-        </li>
-      ))} */}
+      {/* {products.length > 0 &&
+        products.map(({ titleProd, id, price, picture = '' }) => (
+          <li key={id}>
+            <ProductItem
+              name={titleProd}
+              price={price}
+              id={id}
+              picture={picture}
+            />
+          </li>
+        ))} */}
     </ul>
   );
 };

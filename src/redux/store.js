@@ -11,11 +11,11 @@ import {
   REGISTER,
 } from 'redux-persist';
 // import storage from 'redux-persist/lib/storage';
-// import { cartReducer } from './cart/cartSlice';
 import { presistReducerFarm } from './farm/farmSlice';
+import { presistReducerProduct } from './product/productSlice';
 
 export const store = configureStore({
-  reducer: { farm: presistReducerFarm },
+  reducer: { farm: presistReducerFarm, product: presistReducerProduct },
   middleware: getDefaultMiddleware =>
     getDefaultMiddleware({
       serializableCheck: {
