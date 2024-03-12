@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { initialState } from './initialState';
-import { fetchProductbyFarm } from './product-operations';
+import { fetchProductbyFarm, fetchProductById } from './product-operations';
 
 const handlePending = state => {
   state.isLoading = true;
@@ -21,9 +21,18 @@ const productSlice = createSlice({
       .addCase(fetchProductbyFarm.fulfilled, (state, action) => {
         state.product = [...action.payload];
         state.isLoading = false;
-        console.log('Action', state.product);
+        // console.log('Action', state.product);
       })
-      .addCase(fetchProductbyFarm.rejected, handleRejected);
+      .addCase(fetchProductbyFarm.rejected, handleRejected)
+
+      //Запит продукта по ID
+      .addCase(fetchProductById.pending, handlePending)
+      .addCase(fetchProductById.fulfilled, (state, action) => {
+        state.productId = action.payload;
+        state.isLoading = false;
+        // console.log('Action', state.product);
+      })
+      .addCase(fetchProductById.rejected, handleRejected);
   },
 });
 

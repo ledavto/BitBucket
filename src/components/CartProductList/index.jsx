@@ -8,45 +8,36 @@ import {
 } from '../../redux/product/selectors';
 
 class CartProductList extends Component {
-  componentDidMount() {
-    console.log('Render 1');
+  state = {
+    cartProd: [],
+  };
 
+  componentDidMount() {
     const savedCart = localStorage.getItem('cart') ?? [];
-    const parsedCart = JSON.parse(savedCart);
-    console.log(parsedCart);
+    const products = JSON.parse(savedCart);
+
+    this.setState({ cartProd: products });
   }
 
-  // const dispatch = useDispatch();
-
-  // const params = useParams();
-  // const products = useSelector(selectProductByFarm);
-  // const isLoading = useSelector(selectProductLoading);
-
-  // const urlApi = window.location.host;
-  // const fetchProducts = async () => {
-  //   const response = await axios.get(`${urlApi}/api/farm`);
-  //   setPorducts([...response]);
-  // };
-
-  // useEffect(() => {
-  //   // dispatch(fetchProductbyFarm(params.farmId));
-  // }, [dispatch]);
   render() {
+    const { cartProd } = this.state;
     return (
-      <ul className="card-set">
-        {/* {isLoading && <div>Loading...</div>} */}
-        {/* {products.length > 0 &&
-        products.map(({ titleProd, price, _id, picture = '' }) => (
-          <li key={_id}>
-            <ProductItem
-              name={titleProd}
-              price={price}
-              id={_id}
-              picture={picture}
-            />
-          </li>
-        ))} */}
-      </ul>
+      <div className="card-set">
+        {cartProd.map(item => {
+          return (
+            <div className="card-product">
+              <div className="title-card-product">
+                <h2>{item.titleProd}</h2>
+                <img src={item.picture} alt="" width="40" height="40" />
+                <div className="product-price">
+                  Цена: <span>{item.price}</span> грн.
+                </div>
+              </div>
+            </div>
+          );
+        })}
+        ;
+      </div>
     );
   }
 }

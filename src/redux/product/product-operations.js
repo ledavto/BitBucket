@@ -16,3 +16,15 @@ export const fetchProductbyFarm = createAsyncThunk(
     }
   }
 );
+
+export const fetchProductById = createAsyncThunk(
+  'farm/fetchProductById',
+  async (id, thunkAPI) => {
+    try {
+      const { data } = await axios.get(`${URL}/api/product/id/${id}`);
+      return data;
+    } catch (e) {
+      return thunkAPI.rejectWithValue(e.message);
+    }
+  }
+);

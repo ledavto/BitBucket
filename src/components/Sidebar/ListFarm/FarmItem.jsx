@@ -3,8 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 
 export const FarmItem = ({ isActive, title, _id }) => {
   return (
-    <div className="sidebar-item">
-      <Link className="nav-item nav-link" to={`farm/${_id}`}>
+    <nav className="sidebar-item">
+      <Link className="nav-item nav-link" to={`/farm/${_id}`}>
         {title}
       </Link>
       {/* <button
@@ -14,6 +14,6 @@ export const FarmItem = ({ isActive, title, _id }) => {
           >
             {title} 
           </button> */}
-    </div>
+    </nav>
   );
 };
