@@ -7,8 +7,9 @@ export const fetchProductbyFarm = createAsyncThunk(
   'farm/fetchProduct',
   async (id, thunkAPI) => {
     try {
-      console.log('ID - ', id);
+      // console.log('ID - ', id);
       const { data } = await axios.get(`${URL}/api/product/${id}`);
+      // console.log('Data - ', data);
       return data;
     } catch (e) {
       return thunkAPI.rejectWithValue(e.message);

@@ -1,1 +1,2 @@
-export const selectProduct = state => state.products;
+export const selectProductByFarm = state => state.product.product;
+export const selectProductLoading = state => state.product.isLoading;

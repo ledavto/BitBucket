@@ -10,17 +10,10 @@ import { selectProduct } from '../../redux/product/selectors';
 
 export const Sidebar = () => {
   const farms = useSelector(selectFarm);
-  const products = useSelector(selectProduct);
+
   const dispatch = useDispatch();
 
-  const params = useParams();
-
-  console.log('Products -> ', products);
-
-  useEffect(() => {
-    // console.log(params.farmId);
-    dispatch(fetchProductbyFarm(params.farmId));
-  }, [dispatch, params.farmId]);
+  // console.log('Products -> ', products);
 
   console.log('----->', farms);
 

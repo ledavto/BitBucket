@@ -3,16 +3,15 @@ import { initialState } from './initialState';
 import { fetchProductbyFarm } from './product-operations';
 
 const handlePending = state => {
-  state.products.isLoading = true;
+  state.isLoading = true;
 };
 
 const handleRejected = (state, action) => {
-  state.products.isLoading = false;
-  // state.farm.error = action.payload;
+  state.isLoading = false;
 };
 
 const productSlice = createSlice({
-  name: 'products',
+  name: 'product',
   initialState,
 
   extraReducers: builder => {
@@ -20,8 +19,9 @@ const productSlice = createSlice({
       //Запит продуктів
       .addCase(fetchProductbyFarm.pending, handlePending)
       .addCase(fetchProductbyFarm.fulfilled, (state, action) => {
-        state.products = [...action.payload];
-        state.products.isLoading = false;
+        state.product = [...action.payload];
+        state.isLoading = false;
+        console.log('Action', state.product);
       })
       .addCase(fetchProductbyFarm.rejected, handleRejected);
   },

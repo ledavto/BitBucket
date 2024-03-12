@@ -2,7 +2,7 @@ import Container from 'components/Container';
 import React from 'react';
 import { NavBar } from 'components/NavBar';
 import { FormOrder } from 'components/FormOrder';
-import ListProduct from 'components/ProductList';
+import CartProductList from 'components/CartProductList';
 
 const CartPage = () => {
   return (
@@ -11,7 +11,7 @@ const CartPage = () => {
         <NavBar />
         <div className="main-section">
           <FormOrder />
-          <ListProduct />
+          <CartProductList />
         </div>
       </Container>
     </div>

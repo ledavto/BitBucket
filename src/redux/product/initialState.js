@@ -1,4 +1,4 @@
 export const initialState = {
-  products: [],
+  product: [],
   isLoading: false,
 };

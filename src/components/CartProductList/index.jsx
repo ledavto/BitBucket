@@ -1,5 +1,4 @@
-import { useEffect } from 'react';
-import ProductItem from '../ProductItem';
+import { Component, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProductbyFarm } from '../../redux/product/product-operations';
@@ -8,12 +7,20 @@ import {
   selectProductLoading,
 } from '../../redux/product/selectors';
 
-const ListProduct = () => {
-  const dispatch = useDispatch();
-  const params = useParams();
-  const products = useSelector(selectProductByFarm);
+class CartProductList extends Component {
+  componentDidMount() {
+    console.log('Render 1');
+
+    const savedCart = localStorage.getItem('cart') ?? [];
+    const parsedCart = JSON.parse(savedCart);
+    console.log(parsedCart);
+  }
+
+  // const dispatch = useDispatch();
+
+  // const params = useParams();
+  // const products = useSelector(selectProductByFarm);
   // const isLoading = useSelector(selectProductLoading);
-  console.log('Prod - ', products);
 
   // const urlApi = window.location.host;
   // const fetchProducts = async () => {
@@ -21,14 +28,14 @@ const ListProduct = () => {
   //   setPorducts([...response]);
   // };
 
-  useEffect(() => {
-    dispatch(fetchProductbyFarm(params.farmId));
-  }, [dispatch, params]);
-
-  return (
-    <ul className="card-set">
-      {/* {isLoading && <div>Loading...</div>} */}
-      {products.length > 0 &&
+  // useEffect(() => {
+  //   // dispatch(fetchProductbyFarm(params.farmId));
+  // }, [dispatch]);
+  render() {
+    return (
+      <ul className="card-set">
+        {/* {isLoading && <div>Loading...</div>} */}
+        {/* {products.length > 0 &&
         products.map(({ titleProd, price, _id, picture = '' }) => (
           <li key={_id}>
             <ProductItem
@@ -38,9 +45,10 @@ const ListProduct = () => {
               picture={picture}
             />
           </li>
-        ))}
-    </ul>
-  );
-};
+        ))} */}
+      </ul>
+    );
+  }
+}
 
-export default ListProduct;
+export default CartProductList;
