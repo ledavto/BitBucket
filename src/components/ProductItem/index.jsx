@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Notiflix from 'notiflix';
 import { Component } from 'react';
 
 const URL = 'https://bitbucket-backend.onrender.com';
@@ -14,12 +15,10 @@ class ProductItem extends Component {
 
     this.fetchProd(idProd).then(elem => {
       const savedCart = localStorage.getItem('cart') ?? [];
-      const parsedCart = JSON.parse(savedCart);
-      // console.log(parsedCart);
-
-      // const parsedCart = [];
+      const parsedCart = savedCart.length > 0 ? JSON.parse(savedCart) : [];
       parsedCart.push(elem.data);
       localStorage.setItem('cart', JSON.stringify(parsedCart));
+      Notiflix.Notify.success('Product add to cart!');
       return elem.data;
     });
   };
@@ -31,12 +30,7 @@ class ProductItem extends Component {
         <div className="title-card-product">
           <h2>{name}</h2>
         </div>
-        <img
-          src="BitBucket/images/validol.jpg"
-          alt=""
-          width="200"
-          height="200"
-        />
+        <img src={picture} alt="" width="200" />
         <div className="product-price">
           Цена: <span>{price}</span> грн.
         </div>

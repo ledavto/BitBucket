@@ -1,11 +1,4 @@
-import { Component, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchProductbyFarm } from '../../redux/product/product-operations';
-import {
-  selectProductByFarm,
-  selectProductLoading,
-} from '../../redux/product/selectors';
+import { Component } from 'react';
 
 class CartProductList extends Component {
   state = {
@@ -13,30 +6,37 @@ class CartProductList extends Component {
   };
 
   componentDidMount() {
-    const savedCart = localStorage.getItem('cart') ?? [];
-    const products = JSON.parse(savedCart);
+    if (localStorage.getItem('cart') !== null) {
+      const savedCart = localStorage.getItem('cart') ?? [];
+      const products = JSON.parse(savedCart);
 
-    this.setState({ cartProd: products });
+      this.setState({ cartProd: products });
+    }
   }
 
   render() {
     const { cartProd } = this.state;
     return (
       <div className="card-set">
-        {cartProd.map(item => {
-          return (
-            <div className="card-product">
-              <div className="title-card-product">
-                <h2>{item.titleProd}</h2>
-                <img src={item.picture} alt="" width="40" height="40" />
-                <div className="product-price">
-                  Цена: <span>{item.price}</span> грн.
+        <div className="card-set-container">
+          {cartProd.length > 0 ? (
+            cartProd.map(item => {
+              return (
+                <div key={item._id} className="card-product">
+                  <div className="title-card-product">
+                    <h2>{item.titleProd}</h2>
+                  </div>
+                  <img src={item.picture} alt="" width="200" />
+                  <div className="product-price">
+                    Цена: <span>{item.price}</span> грн.
+                  </div>
                 </div>
-              </div>
-            </div>
-          );
-        })}
-        ;
+              );
+            })
+          ) : (
+            <p>No products in your cart</p>
+          )}
+        </div>
       </div>
     );
   }

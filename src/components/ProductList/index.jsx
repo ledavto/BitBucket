@@ -12,14 +12,7 @@ const ListProduct = () => {
   const dispatch = useDispatch();
   const params = useParams();
   const products = useSelector(selectProductByFarm);
-  // const isLoading = useSelector(selectProductLoading);
-  console.log('Prod - ', products);
-
-  // const urlApi = window.location.host;
-  // const fetchProducts = async () => {
-  //   const response = await axios.get(`${urlApi}/api/farm`);
-  //   setPorducts([...response]);
-  // };
+  const isLoading = useSelector(selectProductLoading);
 
   useEffect(() => {
     dispatch(fetchProductbyFarm(params.farmId));
@@ -27,18 +20,20 @@ const ListProduct = () => {
 
   return (
     <ul className="card-set">
-      {/* {isLoading && <div>Loading...</div>} */}
-      {products.length > 0 &&
-        products.map(({ titleProd, price, _id, picture = '' }) => (
-          <li key={_id}>
-            <ProductItem
-              name={titleProd}
-              price={price}
-              id={_id}
-              picture={picture}
-            />
-          </li>
-        ))}
+      <div className="card-set-container">
+        {isLoading && <div>Loading...</div>}
+        {products.length > 0 &&
+          products.map(({ titleProd, price, _id, picture = '' }) => (
+            <li key={_id}>
+              <ProductItem
+                name={titleProd}
+                price={price}
+                id={_id}
+                picture={picture}
+              />
+            </li>
+          ))}
+      </div>
     </ul>
   );
 };
