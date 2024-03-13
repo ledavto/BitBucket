@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/BitBucket/static/css/main.7acaea2f.css",
-    "main.js": "/BitBucket/static/js/main.07d3183d.js",
+    "main.css": "/BitBucket/static/css/main.bab6ce7d.css",
+    "main.js": "/BitBucket/static/js/main.1e2bfa91.js",
     "index.html": "/BitBucket/index.html",
-    "main.7acaea2f.css.map": "/BitBucket/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/BitBucket/static/js/main.07d3183d.js.map"
+    "main.bab6ce7d.css.map": "/BitBucket/static/css/main.bab6ce7d.css.map",
+    "main.1e2bfa91.js.map": "/BitBucket/static/js/main.1e2bfa91.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.bab6ce7d.css",
+    "static/js/main.1e2bfa91.js"
   ]
 }
